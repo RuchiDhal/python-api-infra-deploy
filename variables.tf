@@ -5,5 +5,5 @@ variable "AWS_DEFAULT_REGION" {
 
 variable "AWS_ECR_DOCKER_IMAGE_URI" {
   type = string
-  default = "value"
+  default = "none"
 }

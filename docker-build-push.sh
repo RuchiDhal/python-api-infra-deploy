@@ -5,7 +5,7 @@ GITHUB_REPO_URL="https://github.com/mransbro/python-api"
 REPO_NAME=$(basename "$GITHUB_REPO_URL")
 DOCKER_IMAGE_NAME=$REPO_NAME
 DOCKER_IMAGE_VERSION="latest"
-git clone $GITHUB_URL
+git clone $GITHUB_REPO_URL
 cd $REPO_NAME
 docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION .
 echo "Image build successful"
@@ -19,5 +19,4 @@ aws ecr describe-repositories --repository-names $ECR_REPO_NAME || aws ecr creat
 docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:$DOCKER_IMAGE_VERSION
 # push
 docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:$DOCKER_IMAGE_VERSION
-# to be used in terraform
-export AWS_ECR_DOCKER_IMAGE_URI=$(echo "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:$DOCKER_IMAGE_VERSION")
+
