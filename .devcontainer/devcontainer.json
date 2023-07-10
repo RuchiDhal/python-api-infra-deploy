@@ -1,7 +1,4 @@
 {
   "name": "python-api-infra-deploy",
-  "image": "mcr.microsoft.com/devcontainers/python:0-3.11-bullseye",
-  "features": {
-    "ghcr.io/ruchidhal/python-api-infra-deploy:main": {}
-  }
+  "image": "ghcr.io/ruchidhal/python-api-infra-deploy:main"
 }
