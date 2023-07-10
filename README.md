@@ -1,24 +1,22 @@
 # python-api-infra-deploy
-Infrastructure deployment for python-api web application to AWS ECS - https://github.com/mransbro/python-api
+Infrastructure deployment for [python-api](https://github.com/mransbro/python-api) web application to AWS ECS using Terraform. Also automates building of docker image and pushing to ECR.
 
 ## Dependency 
 * Docker
 * [AWS CLI - V2](https://aws.amazon.com/cli/)
 * [Terraform CLI](https://developer.hashicorp.com/terraform/cli)
 
-For quick start, We can use CodeSpace follow up by setup script (Docker comes pre-installed in github codespace) - [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/RuchiDhal/python-api-infra-deploy?quickstart=1)
+For quick start, We can use CodeSpace follow up by setup script - [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/RuchiDhal/python-api-infra-deploy?quickstart=1)
+
+> Docker comes pre-installed in github codespace
 
 ```bash
 ./setup.sh
 ```
 
-Or use this exiting DevEnv Setup - 
-
 ## Build docker container and push to AWS-ECR
 
-For this following interaction with AWS, make sure the **aws-cli v2** configuration is done for authentication 
-
-Export following ENV - 
+Export following ENV to configure AWS - 
 
 ```bash
 export AWS_ACCESS_KEY_ID=*****************
@@ -27,7 +25,7 @@ export AWS_DEFAULT_REGION=*****************
 export AWS_ACCOUNT_ID=***************** # to be used in ECR image path
 ```
 
-Clone the python-api repo to build the docker image
+Clone the python-api repo to build the docker image for the web application
 
 ```bash
 git clone https://github.com/RuchiDhal/python-api-infra-deploy
@@ -52,5 +50,7 @@ terraform init
 terraform plan -var 'AWS_ECR_DOCKER_IMAGE_URI='"$AWS_ECR_DOCKER_IMAGE_URI"
 terraform apply -var 'AWS_ECR_DOCKER_IMAGE_URI='"$AWS_ECR_DOCKER_IMAGE_URI" -auto-approve
 ```
+
+## Outline of the Deployment
 
 ![](python-api-aws-ecs-deployment.svg)
