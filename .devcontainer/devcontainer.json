@@ -1,7 +1,0 @@
-{
-  "name": "python-api-infra-deploy",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/ruchidhal/python-api-infra-deploy:main": {}
-  }
-}
