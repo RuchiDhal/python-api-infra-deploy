@@ -57,3 +57,5 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 ```
+
+![](python-api-aws-ecs-deployment.svg)
