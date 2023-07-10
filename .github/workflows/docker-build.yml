@@ -2,7 +2,7 @@ name: Publish Docker image
 on:
   push:
     paths:
-      - .github/docker-build.yml
+      - .github/workflows/docker-build.yml
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
