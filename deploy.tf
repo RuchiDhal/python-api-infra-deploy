@@ -1,6 +1,6 @@
 # Configure the AWS provider
 provider "aws" {
-  region = var.aws_region 
+  region = var.AWS_DEFAULT_REGION 
 }
 
 # Create a VPC and subnets
@@ -101,7 +101,7 @@ resource "aws_ecs_task_definition" "my_task_definition" {
   container_definitions    = jsonencode([
   {
     "name": "python-api-container",
-    "image": var.aws_ecr_docker_image_uri,
+    "image": var.AWS_ECR_DOCKER_IMAGE_URI,
     "portMappings": [
       {
         "name": "python-api-container-80-tcp",

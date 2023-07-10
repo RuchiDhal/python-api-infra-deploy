@@ -19,3 +19,5 @@ aws ecr describe-repositories --repository-names $ECR_REPO_NAME || aws ecr creat
 docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:$DOCKER_IMAGE_VERSION
 # push
 docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:$DOCKER_IMAGE_VERSION
+# to be used in terraform
+export AWS_ECR_DOCKER_IMAGE_URI=$(echo "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME:$DOCKER_IMAGE_VERSION")

@@ -1,9 +1,9 @@
-variable "aws_region" {
+variable "AWS_DEFAULT_REGION" {
   type = string
   default = "eu-west-1"
 }
 
-variable "aws_ecr_docker_image_uri" {
+variable "AWS_ECR_DOCKER_IMAGE_URI" {
   type = string
   default = "value"
 }
