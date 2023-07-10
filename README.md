@@ -27,6 +27,8 @@ sudo apt-get install terraform -y
 ```
 </details>
 
+Or use this exiting DevEnv Setup - [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/RuchiDhal/python-api-infra-deploy?quickstart=1)
+
 ## Build docker container and push to AWS-ECR
 
 For this following interaction with AWS, make sure the **aws-cli v2** configuration is done for authentication 
