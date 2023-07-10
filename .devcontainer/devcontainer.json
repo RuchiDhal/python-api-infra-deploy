@@ -1,6 +1,5 @@
 {
-    ...
-    "build": { "dockerfile": "Dockerfile" },
-    ...
+  "image": "hashicorp/terraform:latest",
+  "features": {
+  }
 }
-  
