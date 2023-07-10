@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
 RUN apt-get update && apt-get install -y curl wget unzip gnupg software-properties-common
 
